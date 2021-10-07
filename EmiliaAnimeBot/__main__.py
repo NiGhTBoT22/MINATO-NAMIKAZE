@@ -23,7 +23,8 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-EMILIA_IMG = "https://telegra.ph/file/af3b555514ee92666e95d.jpg"
+EMILIA_IMG = "https://telegra.ph/file/273496a28bd1b9fc26b96.jpg"
+VeGeTa_IMG = "https://telegra.ph/file/1bcec7b7230ea39ad9166.mp4"
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -58,7 +59,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT ="""
 𝘏𝘰𝘭𝘢 There {}
-[∆𝕴 𝖆𝖒 𝕸𝖎𝖓𝖆𝖙𝖔 𝖆𝖐𝖆 𝖀𝖗 𝖄𝖊𝖑𝖑𝖔𝖜 𝖋𝖑𝖆𝖘𝖍 ∆](https://telegra.ph/file/af3b555514ee92666e95d.jpg)
+[★彡 𝓘 𝓪𝓶 𝓥𝓮𝓖𝓮𝓣𝓪 (𝓪𝓴𝓪) 𝓤𝓻 𝓢𝓾𝓹𝓮𝓻 𝓢𝓪𝓲𝔂𝓪𝓷 彡★](https://telegra.ph/file/273496a28bd1b9fc26b96.jpg)
 ━━━━━━━━━━━━━━━━━━━━━━
 This is a highly featured weebish style group management
 Press /help to see what this pro bot can do
@@ -70,11 +71,15 @@ Press /help to see what this pro bot can do
 
 buttons = [
     [
-      InlineKeyboardButton(text="➕ Add Minato To Your Group!",url=f"t.me/{BOT_USERNAME}?startgroup=true")
+      InlineKeyboardButton(text="➕ Add ThE_VeGeTa To Your Group!",url=f"t.me/{BOT_USERNAME}?startgroup=true")
     ],
     [
-      InlineKeyboardButton(text="⚙️ Support Group", url= "t.me/minato_support"),
-      InlineKeyboardButton(text="🔔Updates Channel",url="https://t.me/MINATO_UPDATES")
+      InlineKeyboardButton(text="⚙️ Support Group", url= "https://t.me/VeGeTa_support"),
+      InlineKeyboardButton(text="🔔Updates Channel",url="https://t.me/VeGeTa_support")
+    ],
+    [
+      InlineKeyboardButton(text="💕My luv",url="https://t.me/joinchat/MzedbzLFDbAyMjE1"),
+      InlineKeyboardButton(text="🎵Song Group",url="https://t.me/NiGhT_BoT_MaGiC_ShOw")
     ],
     [
       InlineKeyboardButton(text="📖 COMMANDS ",callback_data ="help_back")
@@ -82,7 +87,7 @@ buttons = [
 ]
 
 HELP_STRINGS ="""
-hey there! Minato namikaze  again
+Hey there! ★彡 𝓘𝓽'𝓼 𝓥𝓮𝓖𝓮𝓣𝓪 𝓪𝓰𝓪𝓲𝓷 彡★ 
 
 """
 
@@ -197,8 +202,8 @@ def start(update: Update, context: CallbackContext):
               timeout = 60
             )
     else:
-        update.effective_message.reply_photo(
-            EMILIA_IMG, caption= "<code>{} is Here For You ㊙️\nI am Awake Since</code>: <code>{}</code>".format(
+        update.effective_message.reply_video(
+            VeGeTa_IMG, caption= "<code>★彡{} is Here For You 彡★\n★彡 𝓘 𝓪𝓶 𝓱𝓮𝓻𝓮 𝔀𝓲𝓽𝓱 𝓶𝔂 𝓖𝓪𝓵𝓲𝓬𝓴 𝓖𝓾𝓷 !!! 彡★\nI am Awake Since</code>: <code>{}</code>".format(
                 BOT_NAME, uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -208,7 +213,7 @@ def start(update: Update, context: CallbackContext):
                   InlineKeyboardButton(text="help", url=f"https://t.me/{BOT_USERNAME}?start=help")
                   ],
                   [
-                  InlineKeyboardButton(text="support", url=f"https://t.me/minato_support")
+                  InlineKeyboardButton(text="support", url=f"https://t.me/VeGeTa_support")
                   ],
                 ]
             ),
@@ -390,7 +395,7 @@ def get_help(update: Update, context: CallbackContext):
             InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="help_back"),
                                 InlineKeyboardButton(
-                                    text="Support", url="https://telegram.dog/Minato_support"
+                                    text="Support", url="https://t.me/VeGeTa_support"
                                 )]]
             ),
         )
@@ -581,7 +586,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage("@minato_support", "[MINATO IS BACK ONLINE⚡](https://telegra.ph/file/96c3d55c8eed84c3650de.mp4)",parse_mode = ParseMode.MARKDOWN ),
+            dispatcher.bot.sendMessage("@VeGeTa_support", "[★彡 𝓜𝔂 𝓢𝓾𝓹𝓮𝓻 𝓢𝓪𝓲𝔂𝓪𝓷 𝓑𝓵𝓾𝓮 𝔀𝓸𝓷'𝓽 𝓵𝓮𝓽 𝓶𝓮 𝓭𝓲𝓮 !!! 彡★](https://telegra.ph/file/8bbe47c4dcbf90aa49065.mp4)",parse_mode = ParseMode.MARKDOWN ),
 
         except Unauthorized:
             LOGGER.warning(
