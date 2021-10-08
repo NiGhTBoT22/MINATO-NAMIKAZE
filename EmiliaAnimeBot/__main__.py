@@ -79,7 +79,7 @@ buttons = [
     ],
     [
       InlineKeyboardButton(text="💕My luv",url="https://t.me/joinchat/MzedbzLFDbAyMjE1"),
-      InlineKeyboardButton(text="🎵Song Group",url="https://t.me/NiGhT_BoT_MaGiC_ShOw")
+      InlineKeyboardButton(text="📁 Source", url="https://github.com/IzumiCypherX/EmiliaAnimeBot")
     ],
     [
       InlineKeyboardButton(text="📖 COMMANDS ",callback_data ="help_back")
